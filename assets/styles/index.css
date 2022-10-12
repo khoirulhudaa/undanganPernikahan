@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ruthie&family=Sacramento&display=swap');
+
+body {
+    overflow-x: hidden;
+    background-color: #2F2020;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sacramento {
+font-family: 'Sacramento', cursive;
+}
+
+.ruthie {
+    font-family: 'Ruthie', cursive;
+}
+
+#cover {
+    overflow-y: hidden;
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}

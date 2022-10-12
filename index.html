@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/index.css" />
+        <title>Undangan Tema Wayang</title>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#2F2020",
+                            secondary1: "#FDED97",
+                            secondary2: "#FABA5E",
+                            error: "#EF2206",
+                            success: "#EFAE06",
+                            warning: "#06DB41",
+                        },
+                    },
+                },
+            };
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".slider").click(function () {
+                    $("#cover").slideUp("slow");
+                    $("#content").show();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div class="relative">
+            <audio autoplay id="audio">
+                <source src="./assets/musik.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="relative w-screen h-screen max-h-screen m-0 overflow-hidden bg-primary" id="cover">
+            <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 left-0" />
+            <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 right-0 rotate-90" />
+            <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90" />
+            <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180" />
+
+            <div class="mx-auto w-[60%] relative md:left-[19%] md:translateX-[-50%] pt-12">
+                <img src="./assets/img/wayang.svg" alt="logo" />
+            </div>
+            <div class="flex flex-col gap-6 w-9/12 mt-3 mb-8 mx-auto">
+                <h1 class="text-2xl text-white mr-auto w-max sacramento">Agung Wahyu Saputro</h1>
+                <h1 class="text-2xl text-white ml-auto w-max sacramento">Dwi Aviani</h1>
+            </div>
+            <div class="w-[70vw] mx-auto border-2 border-secondary2 flex flex-col gap-8 p-5 mb-10 text-center text-white rounded-xl">
+                <p class="text-sm font-medium">Kepada Yth</p>
+                <p class="text-base font-semibold">Sri mulyani</p>
+            </div>
+            <div id="open" class="w-max mx-auto slider bg-white w-max text-primary font-medium relative top-[-20px] text-sm rounded-xl mx-auto text-center px-3.5 py-2.5">Buka undangan</div>
+        </div>
+        <div class="m-0 p-0 hidden" id="content">
+            <section class="h-[100vh] relative flex flex-col">
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 left-0" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 right-0 rotate-90" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180" />
+
+                <div class="mx-auto relative md:left-[19%] md:translateX-[-50%] top-[-20px] w-[60%] pt-16">
+                    <img src="./assets/img/wayang.svg" alt="logo" />
+                </div>
+                <div class="flex flex-col gap-8 w-9/12 mt-3 mb-12 mx-auto">
+                    <h1 class="text-2xl text-white mr-auto w-max sacramento">Agung Wahyu Saputro</h1>
+                    <h1 class="text-2xl text-white ml-auto w-max sacramento">Dwi Aviani</h1>
+                </div>
+                <div class="grid grid-cols-4 gap-6 mx-auto mb-4 w-10/12">
+                    <div class="bg-white p-1 text-primary text-2xl rounded-md font-semibold flex items-center justify-center">
+                        <span id="days"></span>
+                    </div>
+                    <div class="bg-white p-1 text-primary text-2xl rounded-md font-semibold flex items-center justify-center">
+                        <span id="hours"></span>
+                    </div>
+                    <div class="bg-white p-1 text-primary text-2xl rounded-md font-semibold flex items-center justify-center">
+                        <span id="minutes"></span>
+                    </div>
+                    <div class="bg-white p-1 text-primary text-2xl rounded-md font-semibold flex items-center justify-center">
+                        <span id="seconds">16</span>
+                    </div>
+                </div>
+                <div class="mx-auto w-8/12 flex items-center gap-4 justify-center">
+                    <hr class="border-2 border-secondary2 bg-secondary2 w-full" />
+                    <p class="text-sm font-bold text-white text-center">Wedding</p>
+                    <hr class="border-2 border-secondary2 bg-secondary2 w-full" />
+                </div>
+            </section>
+
+            <section class="py-16 relative">
+                <div class="h-[328px] w-[225px] relative mx-auto">
+                    <img src="./assets/img/frame.svg" class="absolute w-full h-full z-10 -mt-3" alt="frame" />
+                    <div class="h-[304px] w-[213px] mx-auto relative overflow-hidden -z-10">
+                        <img src="./assets/img/male.jpg" class="absolute w-full h-full" alt="foto" />
+                    </div>
+                </div>
+                <h1 class="text-[32px] text-center mt-4 text-white leading-none sacramento">Agung Wahyu Saputro</h1>
+                <h1 class="text-5xl font-bold text-white text-center my-11">&</h1>
+                <div class="h-[328px] w-[225px] relative mx-auto">
+                    <img src="./assets/img/frame.svg" class="absolute w-full h-full z-10 -mt-3" alt="frame" />
+                    <div class="h-[304px] w-[213px] mx-auto relative overflow-hidden bg-red -z-10">
+                        <img src="./assets/img/female.jpg" class="absolute w-full h-full" alt="foto" />
+                    </div>
+                </div>
+                <h1 class="text-[41px] text-center mt-4 text-white leading-none mb-32 sacramento">Dwi aviani</h1>
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90 mt-16" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180 mt-16" />
+                <div class="absolute -translate-x-1/2 left-1/2 -bottom-28 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full" alt="decoration" />
+                </div>
+            </section>
+
+            <section class="bg-white px-4 w-screen relative z-10 pt-10 pb-7 -mt-1">
+                <p class="text-primary text-center mb-6">
+                    “Dan diantara ayat-ayat-Nya ialah diciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu merasa nyaman kepadanya, dan dijadikan-Nya diantaramu mawadah dan rahmah.
+                    Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir”
+                </p>
+                <p class="text-xs font-medium text-white bg-primary px-3 py-2 text-center mx-auto w-max">(QS. Ar-Ruum:21)</p>
+            </section>
+
+            <section class="relative overflow-hidden">
+                <div class="absolute -translate-x-1/2 left-1/2 -top-28 -mt-1 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full rotate-180" alt="decoration" />
+                </div>
+                <h1 class="text-4xl font-bold text-center text-white mx-auto py-32">Save the date</h1>
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90 mt-16" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180 mt-16" />
+                <div class="absolute -translate-x-1/2 left-1/2 -bottom-28 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full" alt="decoration" />
+                </div>
+            </section>
+
+            <section class="relative w-screen bg-white py-8">
+                <img src="./assets/img/bg.svg" class="absolute w-full h-full z-10 -mt-8" alt="background" />
+                <div class="relative flex flex-col w-full h-full z-20">
+                    <h1 class="text-primary text-center text-5xl sacramento">Akad nikah</h1>
+                    <div class="relative mx-auto border rotate-45 border-primary w-[112px] h-[112px] flex items-center justify-center my-10">
+                        <h1 class="text-primary font-bold text-center text-4xl absolute -rotate-45 -translate-y-1/2 top-1/2">29</h1>
+                    </div>
+                    <h4 class="text-2xl font-bold mx-auto text-center mb-1">Sabtu</h4>
+                    <h4 class="text-lg mx-auto text-center mb-5">Oktober</h4>
+                    <h5 class="px-9 py-2 rounded-xl bg-primary text-center text-lg font-medium text-white w-max mx-auto mb-6">09:00 - 10:00</h5>
+                    <div class="border border-primary rounded-xl px-12 py-4 flex flex-col gap-8 w-11/12 mx-auto">
+                        <p class="text-primary text-sm font-medium text-center">Bertempat di</p>
+                        <p class="text-primary text-xs font-medium text-center">Halaman Outdoor Belakang Anugrah Mini Market (TK Lazuardi Karangsembung)</p>
+                    </div>
+                </div>
+            </section>
+            <div class="bg-white w-screen">
+                <div class="flex justify-between gap-1 h-14 w-screen">
+                    <div class="bg-primary w-1/5"></div>
+                    <div class="bg-primary w-3/5"></div>
+                    <div class="bg-primary w-1/5"></div>
+                </div>
+            </div>
+
+            <section class="relative w-screen bg-white py-8">
+                <img src="./assets/img/bg.svg" class="absolute w-full h-full z-10 -mt-8" alt="background" />
+                <div class="relative flex flex-col w-full h-full z-20">
+                    <h1 class="text-primary text-center text-5xl sacramento">Resepsi</h1>
+                    <div class="relative mx-auto border rotate-45 border-primary w-[112px] h-[112px] flex items-center justify-center my-10">
+                        <h1 class="text-primary font-bold text-center text-4xl absolute -rotate-45 -translate-y-1/2 top-1/2">29</h1>
+                    </div>
+                    <h4 class="text-2xl font-bold mx-auto text-center mb-1">Sabtu</h4>
+                    <h4 class="text-lg mx-auto text-center mb-5">Oktober</h4>
+                    <h5 class="px-9 py-2 rounded-xl bg-primary text-center text-lg font-medium text-white w-max mx-auto mb-6">11:00 - 15:30</h5>
+                    <div class="border border-primary rounded-xl px-12 py-4 flex flex-col gap-8 w-11/12 mx-auto">
+                        <p class="text-primary text-sm font-medium text-center">Bertempat di</p>
+                        <p class="text-primary text-xs font-medium text-center">Halaman Outdoor Belakang Anugrah Mini Market (TK Lazuardi Karangsembung)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative overflow-hidden">
+                <div class="absolute -translate-x-1/2 left-1/2 -top-28 -mt-1 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full rotate-180" alt="decoration" />
+                </div>
+                <h1 class="text-4xl font-bold text-center text-white mx-auto py-32">Location</h1>
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90 mt-16" />
+                <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180 mt-16" />
+                <div class="absolute -translate-x-1/2 left-1/2 -bottom-28 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full" alt="decoration" />
+                </div>
+            </section>
+
+            <section class="relative bg-white h-max w-screen flex flex-col gap-4">
+                <iframe class="w-[100%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.309303673052!2d108.64537999999999!3d-6.8534796999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f05191471d629%3A0x64cc218ecde335fd!2sToko%20Anugrah!5e0!3m2!1sid!2sid!4v1665551404411!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- <p class="text-xs font-medium text-center mx-auto w-11/12">Jl. Cideng jaya no.33 Kec. kedawung, Kab. Cirebon, Jawa barat</p> -->
+            </section>
+
+            <section class="relative pt-8">
+                <div class="absolute -translate-x-1/2 left-1/2 -top-28 -mt-1 scale-125 -z-10">
+                    <img src="./assets/img/wayang-bg.svg" class="w-full h-full rotate-180" alt="decoration" />
+                </div>
+                <a href="https://www.google.com/maps/place/Toko+Anugrah/@-6.8534797,108.64538,17z/data=!3m1!4b1!4m5!3m4!1s0x2e6f05191471d629:0x64cc218ecde335fd!8m2!3d-6.8534797!4d108.64538">
+                    <h1 class="text-base font-semibold bg-white rounded-xl text-center text-primary mx-auto w-max px-6 py-2">Open map</h1>
+                </a>
+                <h1 class="mt-14 text-center text-white font-bold mx-auto w-9/12 text-4xl mb-9">Protokol kesehatan</h1>
+                <div class="grid grid-cols-3 gap-5 mx-auto w-11/12 pb-14">
+                    <div class="px-3.5 py-7 bg-[#D9D9D9] w-full rounded-xl flex flex-col gap-9 items-center justify-center">
+                        <img src="./assets/img/washing-hands.svg" alt="image" />
+                        <p class="text-[8px] text-primary text-center">Mencuci tangan</p>
+                    </div>
+                    <div class="px-3.5 pb-7 pt-5 bg-[#D9D9D9] w-full rounded-xl flex flex-col gap-9 items-center justify-center">
+                        <img src="./assets/img/mask-character.svg" width="35" height="60" alt="image" />
+                        <p class="text-[8px] text-primary text-center">Gunakan masker</p>
+                    </div>
+                    <div class="px-3.5 pb-7 pt-8 bg-[#D9D9D9] w-full rounded-xl flex flex-col gap-9 items-center justify-center">
+                        <img src="./assets/img/social-distance.svg" alt="image" />
+                        <p class="text-[8px] text-primary text-center mt-auto">Jaga jarak</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative">
+                <h1 class="text-center text-white font-bold mx-auto w-9/12 text-4xl mb-32">Gallery</h1>
+                <div class="relative">
+                    <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 left-0 -rotate-90" />
+                    <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute -bottom-1 right-0 -rotate-180" />
+                    <div class="absolute -translate-x-1/2 left-1/2 -bottom-28 scale-125 -z-10">
+                        <img src="./assets/img/wayang-bg.svg" class="w-full h-full" alt="decoration" />
+                    </div>
+                </div>
+                <div class="bg-white w-screen px-6 py-8 relative">
+                    <div class="overflow-hidden w-[90vw] mb-[20px] mb-5 rounded-xl  pb-[10px] ml-[-7px] h-[200px]">
+                        <img src="./assets/img/img1.jpg" class="rounded-xl w-full scale-110 hover:scale-[2] duration-200" width="326" height="242" alt="img" />
+                    </div>
+                    <div class="grid grid-cols-4 gap-5">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden">
+                            <img src="./assets/img/img3.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                        </div>
+                        <div class="w-16 h-16 rounded-xl overflow-hidden">
+                            <img src="./assets/img/img4.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                        </div>
+                        <div class="w-16 h-16 rounded-xl overflow-hidden">
+                            <img src="./assets/img/img7.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                        </div>
+                        <div class="w-16 h-16 rounded-xl overflow-hidden">
+                            <img src="./assets/img/img6.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                        </div>
+                    </div>
+                    <div class="bg-primary relative">
+                        <div class="absolute -translate-x-1/2 left-1/2 scale-125 -z-10 -top-12 pb-20">
+                            <img src="./assets/img/wayang-bg.svg" class="w-full h-full rotate-180" alt="decoration" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="relative mt-28 overflow-hidden bg-white pt-9 pb-6 w-screen">
+                <div class="absolute -top-7 w-screen">
+                    <img src="./assets/img/wayang2.svg" class="w-screen min-w-screen" alt="bg" />
+                </div>
+                <h1 class="text-4xl text-primary font-bold mb-3 text-center">Wedding gift</h1>
+                <p class="text-primary text-xs text-center w-9/12 mx-auto">Jika temen2 berkenan untuk memberi kado, Kami juga menerima dalam bentuk digital. Terima kasih</p>
+                <div class="flex flex-col items-center gap-10 mt-10">
+                    <div class="py-5 px-16 border-2 mx-auto w-[88vw] border-primary rounded-xl flex flex-col items-center">
+                        <img src="./assets/img/dana.png" alt="logo" class="w-[200px] mb-[20px]" />
+                        <!-- <div class="w-32 h-32 mt-6 mb-5">
+                            <img src="./assets/img/dana.png" alt="barcode" />
+                        </div> -->
+                        <div class="border border-primary rounded-md w-max flex items-center gap-7 justify-between p-2">
+                            <p class="text-sm font-bold">089604544337</p>
+                            <!-- <img src="./assets/img/clipboard.svg" class="copy" onclick="copy_text()" width="30" height="30" alt="clipboard" /> -->
+                            <!-- <input type="text" class="absolute opacity-0" value="089604544337" id="pilih"> -->
+                        </div>
+                    </div>
+                    <div class="py-5 px-16 border-2 mx-auto w-[88vw] mb-[30px] border-primary rounded-xl flex flex-col items-center">
+                        <img src="./assets/img/mandiri.svg" alt="logo" class="mt-[10px] mb-[60px] w-[200px]" />
+                        <div class="border border-primary rounded-md w-max flex items-center gap-7 justify-between p-2">
+                            <p class="text-sm font-bold">1340015963761</p>
+                            <!-- <img src="./assets/img/clipboard.svg" width="30" height="30" alt="clipboard" /> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-screen py-16">
+                <h4 class="text-xl text-white text-center mx-auto font-medium w-max mb-5">Copyright <span class="font-bold">OurDate.id</span> © 2021 <br />All Rights Reserved</h4>
+                <div class="flex items-center gap-6 justify-center">
+                    <a href="">
+                        <img src="./assets/img/instagram.svg" alt="instagram" />
+                    </a>
+                    <a href="">
+                        <img src="./assets/img/whatsapp.svg" alt="whatsapp" />
+                    </a>
+                </div>
+            </section>
+
+            <p id="carasingkat"></p>
+        </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        document.getElementById('open').addEventListener('click', () => {
+            let el = document.getElementById("audio"); 
+            el.play()
+        })
+
+        // Silahkan anda atur tanggal anda
+        var countDownDate = new Date("Oct 29, 2022 09:00:00").getTime();
+        // Hitungan Mundur Waktu Dilakukan Setiap Satu Detik
+        var x = setInterval(function() {
+        // Mendapatkan Tanggal dan waktu Pada Hari ini
+        var now = new Date().getTime();
+        //Jarak Waktu Antara Hitungan Mundur
+        var distance = countDownDate - now;
+        // Perhitungan waktu hari, jam, menit dan detik
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Tampilkan hasilnya di elemen id = "carasingkat"
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+        // Jika hitungan mundur selesai,
+        if (distance < 0) {
+            clearInterval(x);
+        }
+        }, 1000);
+
+        </script>
+    </body>
+</html>

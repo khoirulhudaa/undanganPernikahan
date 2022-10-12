@@ -42,6 +42,15 @@
             </audio>
         </div>
 
+        
+        <div class="overlay">
+            <div class="close" id="close"><img src="./assets/img/close.png" alt="close icon" /></div>
+        </div>
+
+        <div class="popup-image">
+            <img src="./assets/img/img1.jpg" alt="img" />
+        </div>
+
         <div class="relative w-screen h-screen max-h-screen m-0 overflow-hidden bg-primary" id="cover">
             <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 left-0" />
             <img src="./assets/img/corner-gold.svg" alt="decoration" class="absolute top-0 right-0 rotate-90" />
@@ -57,7 +66,7 @@
             </div>
             <div class="w-[70vw] mx-auto border-2 border-secondary2 flex flex-col gap-8 p-5 mb-10 text-center text-white rounded-xl">
                 <p class="text-sm font-medium">Kepada Yth</p>
-                <p class="text-base font-semibold">Sri mulyani</p>
+                <p class="text-base font-semibold" id="nama"></p>
             </div>
             <div id="open" class="w-max mx-auto slider bg-white w-max text-primary font-medium relative top-[-20px] text-sm rounded-xl mx-auto text-center px-3.5 py-2.5">Buka undangan</div>
         </div>
@@ -232,20 +241,20 @@
                 </div>
                 <div class="bg-white w-screen px-6 py-8 relative">
                     <div class="overflow-hidden w-[90vw] mb-[20px] mb-5 rounded-xl  pb-[10px] ml-[-7px] h-[200px]">
-                        <img src="./assets/img/img1.jpg" class="rounded-xl w-full scale-110 hover:scale-[2] duration-200" width="326" height="242" alt="img" />
+                        <img src="./assets/img/img1.jpg" class="rounded-xl w-full scale-110 duration-200 imaged" width="326" height="242" alt="img" />
                     </div>
                     <div class="grid grid-cols-4 gap-5">
                         <div class="w-16 h-16 rounded-xl overflow-hidden">
-                            <img src="./assets/img/img3.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                            <img src="./assets/img/img3.jpg" class="w-auto h-full scale-110 scale-[1] duration-200 imaged" alt="img" />
                         </div>
                         <div class="w-16 h-16 rounded-xl overflow-hidden">
-                            <img src="./assets/img/img4.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                            <img src="./assets/img/img4.jpg" class="w-auto h-full scale-110 scale-[1] duration-200 imaged" alt="img" />
                         </div>
                         <div class="w-16 h-16 rounded-xl overflow-hidden">
-                            <img src="./assets/img/img7.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                            <img src="./assets/img/img7.jpg" class="w-auto h-full scale-110 scale-[1] duration-200 imaged" alt="img" />
                         </div>
                         <div class="w-16 h-16 rounded-xl overflow-hidden">
-                            <img src="./assets/img/img6.jpg" class="w-auto h-full scale-110 scale-[1] hover:scale-[2] duration-200" alt="img" />
+                            <img src="./assets/img/img6.jpg" class="w-auto h-full scale-110 scale-[1] duration-200 imaged   " alt="img" />
                         </div>
                     </div>
                     <div class="bg-primary relative">
@@ -306,6 +315,27 @@
             let el = document.getElementById("audio"); 
             el.play()
         })
+
+        document.querySelectorAll('.imaged').forEach(img => {
+            img.addEventListener('click', () => {
+                document.querySelector('.overlay').style.display = 'block';
+                document.querySelector('.popup-image').style.display = 'block';
+                document.querySelector('.popup-image').style.transition = '1s';
+                document.querySelector('.popup-image img').src = img.getAttribute('src');
+            })
+        })
+        
+        document.getElementById('close').addEventListener('click', () => {
+            document.querySelector('.popup-image').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        })
+
+        window.onload = function() {
+            var url = window.location.pathname;
+            var filename = url.substring(url.lastIndexOf('/')+1);
+            let filename2 = filename.substring (0, filename.length-5);
+            document.getElementById('nama').innerHTML = filename2
+        }
 
         // Silahkan anda atur tanggal anda
         var countDownDate = new Date("Oct 29, 2022 09:00:00").getTime();
